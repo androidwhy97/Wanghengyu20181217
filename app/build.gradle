@@ -1,0 +1,59 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.baway.wanghengyu20181217"
+        minSdkVersion 15
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    //Xrecyclerview依赖(配合recyclerview使用,所以....)
+    implementation('com.jcodecraeer:xrecyclerview:1.5.9') {
+        exclude group: 'com.android.support'
+    }
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
+
+    //eventbus
+    implementation 'org.greenrobot:eventbus:3.1.1'
+
+    //fresco依赖
+    implementation 'com.facebook.fresco:fresco:1.11.0'
+    implementation 'com.facebook.fresco:animated-gif:1.10.0'
+
+    //日志的依赖
+    implementation 'com.orhanobut:logger:2.2.0'
+
+    //Retrofit2的依赖
+    implementation 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
+    implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+
+//Rxjava依赖
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.16'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+
+//rxjava和retrofit连用依赖
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+
+    //butterknife依赖
+    implementation 'com.jakewharton:butterknife:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+}
